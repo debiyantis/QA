@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "7061e266-7099-4483-a930-b0e32860bc12",
+		"name": "WeatherBit API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7099624"
+	},
+	"item": [
+		{
+			"name": "Current Weather Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cek status code\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{current}}/current?lat=40.730610 &lon=-73.935242&key=e38dda0298dc46a7857a279771252f26",
+					"host": [
+						"{{current}}"
+					],
+					"path": [
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "40.730610 "
+						},
+						{
+							"key": "lon",
+							"value": "-73.935242"
+						},
+						{
+							"key": "key",
+							"value": "e38dda0298dc46a7857a279771252f26"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "240 hour / hourly Forecast",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cek status code\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{forecast}}/forecast/hourly?postal_code=27601&key=e38dda0298dc46a7857a279771252f26",
+					"host": [
+						"{{forecast}}"
+					],
+					"path": [
+						"forecast",
+						"hourly"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "27601"
+						},
+						{
+							"key": "key",
+							"value": "e38dda0298dc46a7857a279771252f26"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "current",
+			"value": "https://api.weatherbit.io/v2.0/"
+		},
+		{
+			"key": "forecast",
+			"value": "https://api.weatherbit.io/v2.0/",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"id": "079ed047-86c0-465b-955a-f8ece83db547",
+	"name": "WeatherEnvironments",
+	"values": [
+		{
+			"key": "current",
+			"value": "https://api.weatherbit.io/v2.0/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "forecast",
+			"value": "https://api.weatherbit.io/v2.0/",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-03-10T18:03:03.797Z",
+	"_postman_exported_using": "Postman/10.11.2"
+}
